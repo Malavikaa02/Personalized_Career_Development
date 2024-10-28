@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Navigation } from "./components/navigation";
-import { Header } from "./components/header";
-import { Features } from "./components/features";
-import { About } from "./components/about";
-import { Services } from "./components/services";
-import { Team } from "./components/Team";
-import JsonData from "./data/data.json";
-import { Contact } from "./components/contact";
-import "./App.css";
+import { Navigation } from "../components/navigation";
+import { Header } from "../components/header";
+import { Features } from "../components/features";
+import { About } from "../components/about";
+import { Services } from "../components/services";
+import { Team } from "../components/Team";
+import JsonData from "../data/data.json";
+import { Contact } from "../components/contact";
+import "./css/landing.css";
 
 
 
-const App = () => {
+const Landing = () => {
   const [landingPageData, setLandingPageData] = useState({});
   useEffect(() => {
     setLandingPageData(JsonData);
@@ -30,4 +30,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Landing;
