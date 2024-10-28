@@ -1,3 +1,3 @@
-A Repo for flask server 
+Server side - Flask
 
-Will be updates soo :)
+will be updated soon :)
