@@ -2,12 +2,9 @@ import React, { useState } from "react";
 
 export const Features = (props) => {
   // State to track which dropdown is open
-  const [openDropdown, setOpenDropdown] = useState(null);
+  
 
-  // Function to toggle dropdown visibility
-  const toggleDropdown = (index) => {
-    setOpenDropdown(openDropdown === index ? null : index);
-  };
+
 
   return (
     <div id="features" className="text-center">
@@ -25,24 +22,7 @@ export const Features = (props) => {
                   <h3>{d.title}</h3>
                   <p>{d.text}</p>
 
-                  {/* Dropdown Toggle Button */}
-                  <button onClick={() => toggleDropdown(i)}>
-                    Read More
-                  </button>
-
-                  {/* Dropdown Content */}
-                  {openDropdown === i && (
-                    <div className="dropdown-content">
-                      <ul>
-                        <li>Option 1</li>
-                        <li>Option 2</li>
-                        <li>Option 3</li>
-                        <li>Option 4</li>
-                      </ul>
-                    </div>
-                  )}
-
-                  <br />
+                 
                   <br />
                 </div>
               ))

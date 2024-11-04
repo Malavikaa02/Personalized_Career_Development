@@ -1,3 +1,4 @@
+// server.js
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -9,7 +10,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/llm', {
+mongoose.connect('mongodb://localhost:27017/ai', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -37,11 +38,11 @@ app.post('/saveUser', async (req, res) => {
     if (!user) {
       // If user does not exist, create a new user
       user = new User({ name, email, picture });
-      await user.save();
-      return res.status(201).send('User created');
+      await user.save(); // Save to MongoDB
+      return res.status(201).json({ message: 'User created', user });
     } else {
-      // User already exists, send a message
-      return res.status(200).send('User already exists');
+      // User already exists, return existing user
+      return res.status(200).json({ message: 'User already exists', user });
     }
   } catch (error) {
     console.error('Error saving user:', error); // Log error for debugging
@@ -54,5 +55,3 @@ const PORT = 5000;
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
-
-

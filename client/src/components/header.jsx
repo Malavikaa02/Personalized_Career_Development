@@ -1,6 +1,10 @@
-import React from "react";
+import React from 'react';
+import { useAuth0 } from '@auth0/auth0-react';
+import LoginButton from './LoginButton'; // Import the login button
 
 export const Header = (props) => {
+  const { isAuthenticated } = useAuth0();
+
   return (
     <header id="header">
       <div className="intro">
@@ -13,12 +17,9 @@ export const Header = (props) => {
                   <span></span>
                 </h1>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
-                <a
-                  href="#features"
-                  className="btn btn-custom btn-lg page-scroll"
-                >
-                  Continue With Google
-                </a>{" "}
+                {!isAuthenticated && (
+                  <LoginButton /> // Render login button if not authenticated
+                )}
               </div>
             </div>
           </div>
