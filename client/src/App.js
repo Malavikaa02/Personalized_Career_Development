@@ -1,11 +1,12 @@
+// App.js
 import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import Landing from "./pages/landing";
-import LoginButton from "./components/LoginButton";
-import home from "./components/Home";
-import UserProfile from "./components/UserProfile";
 import axios from "axios";
+
+import Landing from "./pages/landing";
+import HomePage from "./components/HomePage";
+import UserProfile from "./components/UserProfile";
 
 export default function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -34,19 +35,22 @@ export default function App() {
         {/* Public Landing Page */}
         <Route path="/" element={<Landing />} />
 
-        {/* Protected Route - Redirects to Login if not authenticated */}
+        {/* Protected Home Page - Redirects to Landing if not authenticated */}
+        <Route
+          path="/home"
+          element={
+            isAuthenticated ? <HomePage /> : <Navigate to="/" replace />
+          }
+        />
+
+        {/* Protected Profile Page - Redirects to Landing if not authenticated */}
         <Route
           path="/profile"
           element={
-            isAuthenticated ? (
-              <UserProfile />
-            ) : (
-              <Navigate to="/" replace />
-            )
+            isAuthenticated ? <UserProfile /> : <Navigate to="/" replace />
           }
         />
       </Routes>
-
     </BrowserRouter>
   );
 }
