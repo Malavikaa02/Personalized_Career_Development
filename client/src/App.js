@@ -5,8 +5,9 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
 import Landing from "./pages/landing";
-import HomePage from "./components/HomePage";
+import HomePage from "./pages/HomePage";
 import UserProfile from "./components/UserProfile";
+import Frontendrm from "./pages/Frontendrm"
 
 export default function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -32,24 +33,21 @@ export default function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* Public Landing Page */}
         <Route path="/" element={<Landing />} />
-
-        {/* Protected Home Page - Redirects to Landing if not authenticated */}
         <Route
           path="/home"
           element={
             isAuthenticated ? <HomePage /> : <Navigate to="/" replace />
           }
         />
-
-        {/* Protected Profile Page - Redirects to Landing if not authenticated */}
         <Route
           path="/profile"
           element={
             isAuthenticated ? <UserProfile /> : <Navigate to="/" replace />
           }
         />
+        <Route path="/frontend-rm" element={<Frontendrm />} />
+
       </Routes>
     </BrowserRouter>
   );

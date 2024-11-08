@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const Features = (props) => {
   // State to track which dropdown is open

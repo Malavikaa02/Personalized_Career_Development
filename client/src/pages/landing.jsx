@@ -37,10 +37,9 @@ const Landing = () => {
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
       
-      {/* "Continue with Google" login button */}
-      <div className="login-container">
-        <LoginButton /> {/* This component will render the Google login button */}
-      </div>
+      {/* <div className="login-container">
+        <LoginButton /> 
+      </div> */}
     </div>
   );
 };

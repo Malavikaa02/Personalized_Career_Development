@@ -11,14 +11,14 @@ export const Header = (props) => {
         <div className="overlay">
           <div className="container">
             <div className="row">
-              <div className="col-md-8 col-md-offset-2 intro-text">
-                <h1>
+              <div className="col-md-10 col-md-offset-1 intro-text">
+              <h2 style={{ fontSize: "4.5rem" }}>
                   {props.data ? props.data.title : "Loading"}
                   <span></span>
-                </h1>
+                </h2>
                 <p>{props.data ? props.data.paragraph : "Loading"}</p>
                 {!isAuthenticated && (
-                  <LoginButton /> // Render login button if not authenticated
+                  <LoginButton />
                 )}
               </div>
             </div>
