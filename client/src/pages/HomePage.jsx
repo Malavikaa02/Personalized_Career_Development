@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import roadmapImage from '../images/roadmap.jpg';
 import skillsImage from '../images/skills.jpg';
 import projectsImage from '../images/project.avif';
 import resumeImage from '../images/resume.avif';
+import selectJobRoleImage from '../images/select-job-image.jpg'; // Add an image for "select job role" state
 
 const features = [
   {
@@ -29,15 +30,15 @@ const features = [
 ];
 
 const roadmapItems = [
-  { name: 'Frontend' },
-  { name: 'Backend' },
-  { name: 'DevOps' },
-  { name: 'Full Stack' },
-  { name: 'AI Engineer' },
+  { name: 'FRONTEND' },
+  { name: 'BACKEND' },
+  { name: 'DEVOPS' },
+  { name: 'FULL STACK' },
+  { name: 'AI ENGINEERING' },
 ];
 
 const HomePage = () => {
-  const navigate = useNavigate(); // Initialize useNavigate for navigation
+  const navigate = useNavigate();
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
@@ -47,12 +48,10 @@ const HomePage = () => {
     setSelectedItem(itemName);
   };
 
-  // Update the function to dynamically navigate based on the selected item
   const handleLearnMore = () => {
     if (selectedItem) {
-      // Construct the route based on the selected item name
       const route = `/${selectedItem.toLowerCase().replace(/\s+/g, '-')}-rm`;
-      navigate(route); // Navigate to the constructed route
+      navigate(route);
     }
   };
 
@@ -65,6 +64,9 @@ const HomePage = () => {
     content: {
       flex: 1,
       padding: '4rem 1rem',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
     },
     heading: {
       fontSize: '2rem',
@@ -74,9 +76,9 @@ const HomePage = () => {
       marginBottom: '1rem',
     },
     selectedTitle: {
-      fontSize: '1.5rem',
+      fontSize: '2.5rem',
       fontWeight: 'bold',
-      color: '#2c5282',
+      color: 'black',
       textAlign: 'center',
       marginBottom: '2rem',
     },
@@ -174,39 +176,62 @@ const HomePage = () => {
     roadmapButtonSelected: {
       backgroundColor: '#3182ce',
       fontSize: '1rem',
-
     },
-    selectedTitle: {
-      fontSize: '2.5rem', // Increase font size
-      fontWeight: 'bold',
-      color: '#2c5282', // You can keep this color or change it
+    noSelectionContainer: {
+      display: 'flex',
+      flexDirection: 'column',
+      marginTop:'70px',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: '100%',
       textAlign: 'center',
-      marginBottom: '2rem', // Increase margin for better spacing
-      transform: 'scale(1.1)', // Optional: slightly enlarge the title when selected
-      transition: 'transform 0.3s ease', // Optional: smooth transition when selected
+      backgroundColor: '#fff', // White background
+      padding: '2rem', // Padding for spacing
+      borderRadius: '10px', // Rounded corners
+      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Soft shadow for pop-up effect
+      maxWidth: '500px', // Optional: limit the container width
+      maxHeight: '600px' // Center the container horizontally
+    },
+    noSelectionImage: {
+      width: '500px', // Adjust size as needed
+      height: '400px',
+      marginBottom: '1rem',
+    },
+    noSelectionText: {
+      fontSize: '2.5rem',
+      color: '#4a5568',
     },
   };
 
   return (
     <div style={styles.container}>
       <div style={styles.content}>
-        {selectedItem && <h1 style={styles.selectedTitle}>{selectedItem}</h1>}
-        <h2 style={styles.heading}>FEATURES</h2>
-        <br />
-        <div style={styles.featuresContainer}>
-          {features.map((feature, index) => (
-            <div key={index} style={styles.featureCard}>
-              <img src={feature.imageUrl} alt={feature.title} style={styles.featureImage} />
-              <div style={styles.featureContent}>
-                <h2 style={styles.featureTitle}>{feature.title}</h2>
-                <p style={styles.featureDescription}>{feature.description}</p>
-                <button style={styles.featureButton} onClick={handleLearnMore}>
-                  Learn More
-                </button>
-              </div>
+        {selectedItem ? (
+          <>
+            <h1 style={styles.selectedTitle}>{selectedItem}</h1>
+            <h2 style={styles.heading}>FEATURES</h2>
+            <br />
+            <div style={styles.featuresContainer}>
+              {features.map((feature, index) => (
+                <div key={index} style={styles.featureCard}>
+                  <img src={feature.imageUrl} alt={feature.title} style={styles.featureImage} />
+                  <div style={styles.featureContent}>
+                    <h2 style={styles.featureTitle}>{feature.title}</h2>
+                    <p style={styles.featureDescription}>{feature.description}</p>
+                    <button style={styles.featureButton} onClick={handleLearnMore}>
+                      Learn More
+                    </button>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          </>
+        ) : (
+          <div style={styles.noSelectionContainer}>
+            <img src={selectJobRoleImage} alt="Select Job Role" style={styles.noSelectionImage} />
+            <p style={styles.noSelectionText}>Please select any of the job roles to view details.</p>
+          </div>
+        )}
       </div>
       <div style={styles.sidebar}>
         <div style={styles.title}>Select Job Role</div>

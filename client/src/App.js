@@ -7,7 +7,12 @@ import axios from "axios";
 import Landing from "./pages/landing";
 import HomePage from "./pages/HomePage";
 import UserProfile from "./components/UserProfile";
-import Frontendrm from "./pages/Frontendrm"
+import FrontendRM from "./pages/Frontendrm"
+import FullstackRM from "./pages/Fullstackrm";
+import AiEngineerRM from "./pages/AiEngineerrm";
+import DevopsRM from "./pages/Devopsrm";
+import BackendRM from "./pages/Backendrm";
+
 
 export default function App() {
   const { isAuthenticated, user } = useAuth0();
@@ -46,8 +51,11 @@ export default function App() {
             isAuthenticated ? <UserProfile /> : <Navigate to="/" replace />
           }
         />
-        <Route path="/frontend-rm" element={<Frontendrm />} />
-
+        <Route path="/frontend-rm" element={<FrontendRM />} />
+        <Route path="/full-stack-rm" element={<FullstackRM />} />
+        <Route path="/ai-engineering-rm" element={<AiEngineerRM />} />
+        <Route path="/devops-rm" element={<DevopsRM />} />
+        <Route path="/backend-rm" element={<BackendRM />} />
       </Routes>
     </BrowserRouter>
   );
