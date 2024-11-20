@@ -5,6 +5,7 @@ import skillsImage from '../images/skills.jpg';
 import projectsImage from '../images/project.avif';
 import resumeImage from '../images/resume.avif';
 import { Navigationinner } from "../components/navigationinner";
+import ChatbotButton from '../components/ChatbotButton';
 
 const features = [
   {
@@ -40,16 +41,17 @@ const HomePage = () => {
   const styles = {
     container: {
       display: 'flex',
-      minHeight: '100vh',
+      height: 'calc(100vh - 60px)', // Adjust height to fit the viewport minus navbar height
       backgroundColor: '#f7fafc',
       justifyContent: 'center',
       alignItems: 'center',
-      padding: '4rem 1rem',
+      padding: '0 1rem', // Minimized horizontal padding
+      overflow: 'hidden', // Prevent unwanted scrolling
     },
     featuresContainer: {
       display: 'grid',
       gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-      gap: '7.5rem',
+      gap: '7rem', // Reduced spacing between feature cards
       maxWidth: '80rem',
       width: '100%',
     },
@@ -63,28 +65,28 @@ const HomePage = () => {
       textAlign: 'center',
       transition: 'transform 0.3s',
       cursor: 'pointer',
-      maxHeight: '400px',
+      maxHeight: '380px', // Reduced height of feature cards
     },
     featureImage: {
       width: '100%',
       height: 'auto',
       objectFit: 'cover',
-      maxHeight: '180px',
+      maxHeight: '150px', // Adjusted for smaller cards
     },
     featureContent: {
-      padding: '1.5rem',
+      padding: '3rem', // Reduced padding inside cards
     },
     featureTitle: {
-      marginTop: '1.2rem',
-      fontSize: '1.7rem',
+      marginTop: '1rem',
+      fontSize: '1.5rem',
       fontWeight: 'bold',
       color: '#2d3748',
       marginBottom: '0.5rem',
     },
     featureDescription: {
-      fontSize: '1.2rem',
+      fontSize: '1rem',
       color: '#4a5568',
-      marginBottom: '1rem',
+      marginBottom: '0.8rem',
     },
     featureButton: {
       backgroundColor: '#3182ce',
@@ -98,10 +100,11 @@ const HomePage = () => {
       transition: 'background-color 0.3s',
     },
   };
+  
 
   return (
     <>
-      <Navigationinner title={"HOME"}/>
+      <Navigationinner title={"HOME"} />
       <div style={styles.container}>
         <div style={styles.featuresContainer}>
           {features.map((feature, index) => (
@@ -117,6 +120,7 @@ const HomePage = () => {
             </div>
           ))}
         </div>
+        <ChatbotButton />
       </div>
     </>
   );

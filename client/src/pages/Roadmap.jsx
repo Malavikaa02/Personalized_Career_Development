@@ -6,12 +6,21 @@ import projectsImage from '../images/project.avif';
 import resumeImage from '../images/resume.avif';
 import selectJobRoleImage from '../images/select-job-image.jpg';
 import { Navigationinner } from '../components/navigationinner';
+import ChatbotButton from '../components/ChatbotButton';
+
 
 import frontendImage from '../images/roadmaps/frontend_page-0001.jpg';
 import backendImage from '../images/roadmaps/backend_page-0001.jpg';
 import devopsImage from '../images/roadmaps/devops_page-0001.jpg';
 import fullstackImage from '../images/roadmaps/full-stack_page-0001.jpg';
 import aiEngineeringImage from '../images/roadmaps/ai-engineer_page-0001.jpg';
+import aiDatascientistImage from '../images/roadmaps/ai-data-scientist_page-0001.jpg';
+import androidImage from '../images/roadmaps/android_page-0001.jpg';
+import cybersecurityImage from '../images/roadmaps/cyber-security_page-0001.jpg';
+import dataanalystImage from '../images/roadmaps/data-analyst_page-0001.jpg';
+import gamedevImage from '../images/roadmaps/game-developer_page-0001.jpg';
+import iosImage from '../images/roadmaps/ios_page-0001.jpg';
+import uxdesignImage from '../images/roadmaps/ux-design_page-0001.jpg';
 
 const features = [
   {
@@ -42,6 +51,13 @@ const roadmapItems = [
   { name: 'DEVOPS', imageUrl: devopsImage },
   { name: 'FULL STACK', imageUrl: fullstackImage },
   { name: 'AI ENGINEERING', imageUrl: aiEngineeringImage },
+  { name: 'AI DATA SCIENTIST', imageUrl: aiDatascientistImage },
+  { name: 'ANDROID', imageUrl: androidImage },
+  { name: 'CYBER SECURITY', imageUrl: cybersecurityImage },
+  { name: 'DATA ANALYST', imageUrl: dataanalystImage },
+  { name: 'GAME DEVELOPER', imageUrl: gamedevImage },
+  { name: 'IOS', imageUrl: iosImage },
+  { name: 'UX DESIGN', imageUrl: uxdesignImage },
 ];
 
 const Roadmap = () => {
@@ -50,7 +66,7 @@ const Roadmap = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // const toggleExpand = () => setIsExpanded(!isExpanded);
+  const toggleExpand = () => setIsExpanded(!isExpanded);
 
   const handleSelectItem = (itemName) => {
     const selectedRoadmap = roadmapItems.find((item) => item.name === itemName);
@@ -242,9 +258,9 @@ const Roadmap = () => {
       </div>
       <div style={styles.sidebar}>
         <div style={styles.title}>Select Job Role</div>
-        {/* <button style={styles.toggleButton} onClick={toggleExpand}> */}
-          {/* {isExpanded ? 'Show Less' : 'Show More'} */}
-        {/* </button> */}
+        <button style={styles.toggleButton} onClick={toggleExpand}>
+          {isExpanded ? 'Show Less' : 'Show More'}
+        </button>
         {(isExpanded ? roadmapItems : roadmapItems.slice(0, 5)).map((item, index) => (
           <button
             key={index}
@@ -258,6 +274,7 @@ const Roadmap = () => {
           </button>
         ))}
       </div>
+      <ChatbotButton/>
     </div>
     </>
   );

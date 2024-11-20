@@ -4,6 +4,8 @@ import { Navigationinner } from "../components/navigationinner";
 import selectCareerImage from "../images/select-job-image.jpg";
 import { MdDeleteOutline } from "react-icons/md"; 
 import { marked } from 'marked';
+import ChatbotButton from '../components/ChatbotButton';
+
 
 const ProjectsPage = () => {
   const [selectedCareerId, setSelectedCareerId] = useState(null);
@@ -130,7 +132,7 @@ const ProjectsPage = () => {
       marginBottom: "1rem",
       textAlign: "center", 
     },
-        skillItem: { padding: "10px 4px", fontSize: "1rem", color: "#2d3748", backgroundColor: "white", marginBottom: "10px", borderRadius: "5px" },
+        skillItem: { padding: "10px 4px", fontSize: "1.3rem", color: "#2d3748", backgroundColor: "white", marginBottom: "10px", borderRadius: "5px" },
     noSelectionContainer: {
       display: "flex",
       flexDirection: "column",
@@ -249,6 +251,7 @@ const ProjectsPage = () => {
             </button>
           </div>
         </div>
+        <ChatbotButton/>
       </div>
     </>
   );

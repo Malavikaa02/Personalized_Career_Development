@@ -9,6 +9,8 @@ import UserProfile from "./components/UserProfile";
 import Roadmap from "./pages/Roadmap";
 import Skills from "./pages/Skills";
 import ProjectsPage from "./pages/Projects";
+import ResumePage from "./pages/Resumes";
+import Chatbot from "./pages/Chatbot";
 
 
 export default function App() {
@@ -68,7 +70,23 @@ export default function App() {
             isAuthenticated ? <ProjectsPage /> : <Navigate to="/" replace />
           }
         />
+
+
+        <Route
+          path="/resume-build"
+          element={
+            isAuthenticated ? <ResumePage /> : <Navigate to="/" replace />
+          }
+        />
+
+        <Route
+          path="/chatbot"
+          element={
+            isAuthenticated ? <Chatbot /> : <Navigate to="/" replace />
+          }
+        />
       </Routes>
+
     </BrowserRouter>
   );
 }

@@ -7,6 +7,10 @@ export const Header = (props) => {
 
   return (
     <header id="header">
+      <br />
+      <br />
+      <br />
+      <br />
       <div className="intro">
         <div className="overlay">
           <div className="container">

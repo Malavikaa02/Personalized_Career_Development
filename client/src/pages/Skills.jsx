@@ -4,6 +4,8 @@ import { Navigationinner } from "../components/navigationinner";
 import selectCareerImage from "../images/select-job-image.jpg";
 import { MdDeleteOutline } from "react-icons/md"; // Import delete icon
 import { marked } from 'marked';
+import ChatbotButton from '../components/ChatbotButton';
+
 
 const SkillsPage = () => {
   const [selectedCareerId, setSelectedCareerId] = useState(null);
@@ -249,6 +251,7 @@ const SkillsPage = () => {
             </button>
           </div>
         </div>
+        <ChatbotButton/>
       </div>
     </>
   );

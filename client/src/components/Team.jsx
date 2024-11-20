@@ -37,6 +37,8 @@ export const Team = (props) => {
             : "loading"}
         </div>
       </div>
+      <br />
+      <br />
     </div>
   );
 };
