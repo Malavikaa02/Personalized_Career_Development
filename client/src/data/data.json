@@ -6,16 +6,16 @@
   "About": {
     "paragraph": "Our platform empowers users on their career journey by providing tailored guidance and personalized learning pathways. We help users acquire essential skills, enhance their competencies, and navigate their professional paths with confidence. With actionable insights and continuous support, users stay motivated and accountable, exploring various career options that align with their interests and strengths.",
     "Why": [
-      "Lorem ipsum dolor",
-      "Tempor incididunt",
-      "Lorem ipsum dolor",
-      "Incididunt ut labore"
+      "Tailored Career Guidance",
+      "Personalized Skill Insights",
+      "Innovative Project Ideas",
+      "Professional Resume Building"
     ],
     "Why2": [
-      "Aliquip ex ea commodo",
-      "Lorem ipsum dolor",
-      "Exercitation ullamco",
-      "Lorem ipsum dolor"
+      "Empowering Your Career Journey",
+      "Comprehensive Career Support",
+      "Actionable Learning Paths",
+      "Career Diversity Exploration"
     ]
   },
   "Gallery": [
@@ -67,93 +67,55 @@
   ],
   "Services": [
     {
-      "icon": "fa fa-wordpress",
       "name": "Roadmap Guide",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "text": "Create a tailored career roadmap, featuring clearly defined milestones and actionable steps that help you stay on track and achieve sustainable success in your chosen field."
     },
     {
-      "icon": "fa fa-cart-arrow-down",
-      "name": "Email Alert",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Skills Required",
+      "text": "Receive tailored insights on the key skills essential to boost your qualifications and enhance your job prospects, ensuring you're always prepared for new career opportunities."
     },
     {
-      "icon": "fa fa-cloud-download",
-      "name": "Skills Dive",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-language",
-      "name": "Tailored Templates",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-plane",
-      "name": "Guided Project Pathways",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
-    },
-    {
-      "icon": "fa fa-pie-chart",
-      "name": "Skill Growth Tracker",
-      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at."
+      "name": "Project Ideas",
+      "text": "Explore project ideas aligned with your career objectives. These projects provide practical experience and help you build a portfolio that effectively showcases your skills and expertise."
     }
+   
   ],
-  "Testimonials": [
-    {
-      "img": "img/testimonials/01.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/02.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/03.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/04.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    },
-    {
-      "img": "img/testimonials/05.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "John Doe"
-    },
-    {
-      "img": "img/testimonials/06.jpg",
-      "text": "\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam sedasd commodo nibh ante facilisis bibendum dolor feugiat at.\"",
-      "name": "Johnathan Doe"
-    }
-  ],
+
   "Team": [
     {
-      "img": "img/team/01.jpg",
-      "name": "John Doe",
-      "job": "Director"
+      "img": "img/team/male.png",
+      "name": "Arunesh J",
+      "linkedin":"https://www.linkedin.com/in/arunesh04/"
     },
     {
-      "img": "img/team/02.jpg",
-      "name": "Mike Doe",
-      "job": "Senior Designer"
+      "img": "img/team/female.png",
+      "name": "Priyadharshini S",
+      "linkedin":"https://www.linkedin.com/in/priya036/"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
+      "img": "img/team/female.png",
+      "name": "Malavika A",
+      "linkedin":"https://www.linkedin.com/in/malavika-a-b77393259/"
     },
     {
-      "img": "img/team/03.jpg",
-      "name": "Jane Doe",
-      "job": "Senior Designer"
+      "img": "img/team/female.png",
+      "name": "Jenesha Malar S",
+      "linkedin":"https://www.linkedin.com/in/jeneshamalar/"
     },
     {
-      "img": "img/team/04.jpg",
-      "name": "Karen Doe",
-      "job": "Project Manager"
+      "img": "img/team/female.png",
+      "name": "Lokitha R",
+      "linkedin":"https://www.linkedin.com/in/lokitha-r-b69393259/"
+    },
+    {
+      "img": "img/team/female.png",
+      "name": "Varshini L",
+      "linkedin":"https://www.linkedin.com/in/varshini-loganathan-648651256/"
+    },
+    {
+      "img": "img/team/female.png",
+      "name": "Priyadharshini",
+      "linkedin":"https://www.linkedin.com/in/arunesh04/"
     }
   ],
   "Contact": {
