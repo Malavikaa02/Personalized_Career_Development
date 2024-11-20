@@ -67,17 +67,30 @@
   ],
   "Services": [
     {
-      "name": "Roadmap Guide",
-      "text": "Create a tailored career roadmap, featuring clearly defined milestones and actionable steps that help you stay on track and achieve sustainable success in your chosen field."
+      "name": "Career Planning",
+      "text": "Build a strong foundation for your career by identifying your goals, aspirations, and the steps needed to achieve them."
     },
     {
-      "name": "Skills Required",
-      "text": "Receive tailored insights on the key skills essential to boost your qualifications and enhance your job prospects, ensuring you're always prepared for new career opportunities."
+      "name": "Skill Gap Analysis",
+      "text": "Assess your current skill set and identify the gaps in your knowledge and abilities to help you prioritize what to learn next."
     },
     {
-      "name": "Project Ideas",
-      "text": "Explore project ideas aligned with your career objectives. These projects provide practical experience and help you build a portfolio that effectively showcases your skills and expertise."
+      "name": "Hands-on Experience",
+      "text": "Gain practical, valuable, and relevant experience through real-world projects and challenges tailored to your career field."
+    },
+    {
+      "name": "Professional Networking",
+      "text": "Learn the strategies for building and leveraging a professional network to unlock job opportunities and career growth."
+    },
+    {
+      "name": "Interview Preparation",
+      "text": "Prepare for job interviews with mock interviews, common questions, and tips on how to present yourself confidently."
+    },
+    {
+      "name": "Portfolio Building",
+      "text": "Showcase your skills and experience by creating an online portfolio that highlights your projects, achievements, and qualifications."
     }
+    
    
   ],
 
