@@ -1,10 +1,6 @@
 import React from "react";
 
 export const Features = (props) => {
-  // State to track which dropdown is open
-  
-
-
 
   return (
     <div id="features" className="text-center">

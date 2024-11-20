@@ -11,7 +11,6 @@ import { Services } from "../components/services";
 import { Team } from "../components/Team";
 import JsonData from "../data/data.json";
 import { Contact } from "../components/contact";
-import LoginButton from "../components/LoginButton";
 import "./css/landing.css";
 
 const Landing = () => {
@@ -21,7 +20,6 @@ const Landing = () => {
 
   useEffect(() => {
     setLandingPageData(JsonData);
-    // Redirect to /home if the user is already authenticated
     if (isAuthenticated) {
       navigate("/home");
     }
@@ -36,10 +34,6 @@ const Landing = () => {
       <Services data={landingPageData.Services} />
       <Team data={landingPageData.Team} />
       <Contact data={landingPageData.Contact} />
-      
-      {/* <div className="login-container">
-        <LoginButton /> 
-      </div> */}
     </div>
   );
 };

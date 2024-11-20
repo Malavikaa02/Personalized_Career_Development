@@ -7,7 +7,6 @@ function UserProfile() {
 
   useEffect(() => {
     if (isAuthenticated && user) {
-      // Send user data to the backend
       axios.post('http://localhost:5000/saveUser', {
         name: user.name,
         email: user.email,

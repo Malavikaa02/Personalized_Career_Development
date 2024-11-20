@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAuth0 } from '@auth0/auth0-react';
-import LoginButton from './LoginButton'; // Import the login button
+import LoginButton from './LoginButton';
 
 export const Header = (props) => {
   const { isAuthenticated } = useAuth0();

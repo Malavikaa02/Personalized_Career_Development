@@ -10,7 +10,8 @@ exports.processSkillsPrompt = async (req, res) => {
   try {
     const prompt = `Give me ${count} top technical skills required for a ${career} engineer. Each skill should include:
     - Skill name
-    - A short description in 2 lines`;
+    - A short description in 2 lines
+    Note: Provide the output in Markdown format.`;
 
     const chatCompletion = await groq.chat.completions.create({
       messages: [
@@ -26,25 +27,23 @@ exports.processSkillsPrompt = async (req, res) => {
 
     const content = chatCompletion.choices[0]?.message?.content || "";
 
-    const skills = content.split(/\d+\.\s+/).filter(skill => skill.trim() !== '').map((skill, index) => {
-      const skillNumber = index + 1; 
-      return { [`${skillNumber}`]: skill.trim() }; 
-    });
+    // Ensure the content is trimmed and properly formatted as Markdown
+    const markdownSkills = content.trim();
 
-    const formattedSkills = Object.assign({}, ...skills);
-
+    // Store the Markdown skills content in the database
     const existingSkills = await Skills.findOneAndUpdate(
       { careerId: career },
-      { $set: { skills: formattedSkills } },
+      { $set: { skills: markdownSkills } },
       { upsert: true, new: true }
     );
 
-    res.status(200).json({ message: 'Skills prompt processed successfully', skills: formattedSkills });
+    res.status(200).json({ message: 'Skills prompt processed successfully', skills: markdownSkills });
   } catch (error) {
     console.error('Error processing skills prompt:', error);
     res.status(500).send('Error processing skills prompt');
   }
 };
+
 
 exports.getSkillsByCareer = async (req, res) => {
   const { careerId } = req.params;
@@ -60,5 +59,41 @@ exports.getSkillsByCareer = async (req, res) => {
   } catch (error) {
     console.error('Error fetching skills:', error);
     res.status(500).send('Error fetching skills');
+  }
+};
+
+
+exports.deleteSkillsByCareer = async (req, res) => {
+  const { careerId } = req.params;
+
+  try {
+    // Find the career by careerId and delete its associated skills
+    const skillsData = await Skills.findOneAndDelete({ careerId });
+
+    if (!skillsData) {
+      return res.status(404).json({ message: `No skills found for career ${careerId}` });
+    }
+
+    res.status(200).json({ message: `Skills for career ${careerId} have been deleted` });
+  } catch (error) {
+    console.error('Error deleting skills:', error);
+    res.status(500).send('Error deleting skills');
+  }
+};
+
+exports.getCareerIds = async (req, res) => {
+  try {
+    const careers = await Skills.find({}, { careerId: 1, _id: 0 });  // Only fetch careerId, exclude _id
+    
+    if (careers.length === 0) {
+      return res.status(404).json({ message: 'No career IDs found' });
+    }
+
+    const careerIds = careers.map(career => career.careerId); // Extract the careerId field
+
+    res.status(200).json(careerIds);  // Return the careerIds array directly
+  } catch (error) {
+    console.error('Error fetching career IDs:', error);
+    res.status(500).send('Error fetching career IDs');
   }
 };

@@ -3,15 +3,12 @@ import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-
-import Landing from "./pages/landing";
+import Landing from "./pages/Landing";
 import HomePage from "./pages/HomePage";
 import UserProfile from "./components/UserProfile";
-import FrontendRM from "./pages/Frontendrm"
-import FullstackRM from "./pages/Fullstackrm";
-import AiEngineerRM from "./pages/AiEngineerrm";
-import DevopsRM from "./pages/Devopsrm";
-import BackendRM from "./pages/Backendrm";
+import Roadmap from "./pages/Roadmap";
+import Skills from "./pages/Skills";
+import ProjectsPage from "./pages/Projects";
 
 
 export default function App() {
@@ -51,11 +48,26 @@ export default function App() {
             isAuthenticated ? <UserProfile /> : <Navigate to="/" replace />
           }
         />
-        <Route path="/frontend-rm" element={<FrontendRM />} />
-        <Route path="/full-stack-rm" element={<FullstackRM />} />
-        <Route path="/ai-engineering-rm" element={<AiEngineerRM />} />
-        <Route path="/devops-rm" element={<DevopsRM />} />
-        <Route path="/backend-rm" element={<BackendRM />} />
+        <Route
+          path="/roadmap"
+          element={
+            isAuthenticated ? <Roadmap /> : <Navigate to="/" replace />
+          }
+        />
+
+        <Route
+          path="/skills-required"
+          element={
+            isAuthenticated ? <Skills /> : <Navigate to="/" replace />
+          }
+        />
+
+        <Route
+          path="/project-ideas"
+          element={
+            isAuthenticated ? <ProjectsPage /> : <Navigate to="/" replace />
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

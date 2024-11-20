@@ -6,11 +6,7 @@ const projectSchema = new mongoose.Schema({
     required: true,
     unique: true,  
   },
-  projects: {
-    type: Map,
-    of: String,
-    required: true,
-  },
+  projects: String
 });
 
 const Project = mongoose.model('Project', projectSchema);
