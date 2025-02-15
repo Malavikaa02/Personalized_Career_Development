@@ -1,10 +1,5 @@
 # 🚀 Unlocking Potential: An AI Tool for Personalized Career Development  
 
-### 🌟 Empowering Careers with AI & ML  
-
-"Unlocking Potential" is an **AI-powered career development tool** designed to help users explore job roles, acquire necessary skills, work on relevant projects, and build AI-enhanced resumes. 💡 Whether you're a beginner or an experienced professional, this platform provides a structured **roadmap to success!** 🏆  
-
----
 
 ## 🔥 Key Features  
 
@@ -32,19 +27,5 @@
 
 ---
 
-## 🛠️ Tech Stack  
 
-| 🌐 Frontend  | ⚙️ Backend | 🗄️ Database | 🔑 Authentication | 🤖 AI/ML |  
-|-------------|-----------|------------|-----------------|---------|  
-| React.js ⚛️ | Node.js 🟢 | MongoDB 🍃 | Auth0 🔐 | Hugging Face 🤗 |  
-| Tailwind CSS 🎨 | Express.js 🚀 | Mongoose 🛢️ | JWT 🛡️ | OpenAI API 🤖 |  
-
----
-
-## 🚀 Installation & Setup  
-
-### 1️⃣ **Clone the Repository**  
-```sh
-git clone https://github.com/yourusername/personalized-career-development.git
-cd personalized-career-development
 
